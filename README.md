@@ -5,7 +5,7 @@ Project ini dibuat sebagai media belajar saya mempelajari Express JS dan menggun
 ### Cara Menggunakan Project Ini
 
 1. Clone project ini [https://github.com/rafialfatih](https://github.com/rafialfatih)
-2. Setelah itu, jalankan `npm install`
+2. Setelah itu masuk ke folder dengan cara `cd express-mongoose`, jalankan `npm install`
 3. Jalankan copy file .env.example menjadi .env dengan cara `cp .env.example .env`
 4. Sambungkan aplikasi dengan database [MongoDB](https://www.mongodb.com/) pada konfigurasi .env
 5. Setelah tersambung, jalankan aplikasi dengan cara `npm start`
@@ -13,6 +13,4 @@ Project ini dibuat sebagai media belajar saya mempelajari Express JS dan menggun
 
 ### Tentang Project Ini
 
-Project ini akan terus di-update secara berkala ketika saya mempelajari Express JS dan MongoDB.
----
-Saat ini project ini masih dalam tahap awal.
+Project ini akan terus di-update secara berkala ketika saya mempelajari Express JS dan MongoDB. Saat ini project ini masih dalam tahap awal.
