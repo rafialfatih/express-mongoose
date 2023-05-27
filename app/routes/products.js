@@ -13,10 +13,10 @@ router.get('/', getAllProducts)
 
 router.get('/:productID', getProduct)
 
-router.post('/', createProduct) 
+router.post('/', createProduct)
 
-router.put('/:productID', updateProduct) 
+router.put('/:productID', updateProduct)
 
 router.delete('/:productID', deleteProduct)
 
-module.exports = router
+export default router

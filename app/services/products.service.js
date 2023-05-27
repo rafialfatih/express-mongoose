@@ -1,54 +1,34 @@
 import Product from "#/models/product.model";
 
 const getAllProducts = async () => {
-    try {
-        const products = await Product.find()
-        
-        return products
-    } catch (e) {
-        throw Error('Error while retrieving product.')
-    }
+    const products = await Product.find()
+
+    return products
 }
 
 const getProduct = async (id) => {
-    try {
-        const product = await Product.findById(id)
+    const product = await Product.findById(id)
         
-        return product
-    } catch (e) {
-        throw Error('Error while retrieving product.')
-    }
+    return product
 }
 
 const createProduct = async (data) => {
-    try {
-        const product = await Product.create(data)
-        
-        return product
-    } catch (e) {
-        throw Error('Error while creating new product.')
-    }
+    const product = await Product.create(data)
+
+    return product
 }
 
 const updateProduct = async (id, data) => {
-    try {
-        const product = await Product.findByIdAndUpdate(id, data, { new: true })
+    const product = await Product.findByIdAndUpdate(id, data, { new: true })
         
-        return product
-    } catch (e) {
-        throw Error('Error while updating product.')
-    }
+    return product
 }
 
 const deleteProduct = async (id) => {
-    try {
-        await Product.findByIdAndDelete(id)
-    } catch (e) {
-        throw Error('Error while deleting product.')
-    }
+    await Product.findByIdAndDelete(id)
 }
 
-module.exports = {
+export {
     getAllProducts,
     getProduct,
     createProduct,
