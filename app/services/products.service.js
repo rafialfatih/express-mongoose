@@ -25,7 +25,11 @@ const updateProduct = async (id, data) => {
 }
 
 const deleteProduct = async (id) => {
-    await Product.findByIdAndDelete(id)
+    const product = await Product.findById(id)
+
+    if (!product) return { status: 404 }
+
+    return await product.deleteOne()
 }
 
 export {

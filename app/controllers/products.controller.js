@@ -8,14 +8,15 @@ const getAllProducts = async (req, res) => {
         logger.warn('Data not found!')
         return res.status(204).json({
             status: 204,
-            message: "Data is empty"
+            message: 'Data is empty.'
         })
     }
+    logger.info('Data is OK!')
 
     return res.status(200).json({
         status: 200,
         data: products,
-        message: "Products successfully retrieved."
+        message: 'Products successfully retrieved.'
     })
 }
     
@@ -29,7 +30,6 @@ const getProduct = async (req, res) => {
             message: 'Product not found.'
         })
     }
-    
     logger.info('Data is OK!')
 
     return res.status(200).json({
@@ -69,7 +69,7 @@ const updateProduct = async (req, res) => {
         logger.info('Data not found!')
         return res.status(404).json({
             status: 404,
-            message: 'Product not found!'
+            message: 'Product not found.'
         })
     }
 
@@ -83,7 +83,15 @@ const updateProduct = async (req, res) => {
 const deleteProduct = async (req, res) => {
     const { productID } = req.params
     
-    await productService.deleteProduct(productID)
+    const product = await productService.deleteProduct(productID)
+
+    if (product.status == 404) {
+        return res.status(404).json({
+            status: 404,
+            message: 'Product not found.'
+        })
+    }
+
     logger.info('Data is deleted!')
     
     return res.status(200).json({

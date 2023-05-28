@@ -1,8 +1,6 @@
 import express from 'express'
 import mongoose from 'mongoose'
 
-import 'express-async-errors'
-
 import config from './config/config'
 import productsRoutes from './routes/products'
 import morgan from './middlewares/morgan.middleware'
