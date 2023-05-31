@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 import config from './config/config'
 import logger from './utils/logger'
 
-import app from './index'
+import app from './app'
 
 const start = async () => {
     try{
